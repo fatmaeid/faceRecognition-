@@ -1,39 +1,38 @@
-from flask_sqlalchemy import SQLAlchemy 
+
 from datetime import datetime
-app.config['SQLALCHEMY_DATABASE_URL'] = 'sqlite:///test.db'
-db = SQLAlchemy(app)
+from app import db
 
-class student(db.Model):
-    id = db.column(db.Integer, primary_key = True)
-    name = db.column (db.string(120), unique= True, nullable=False)
-    year = db.column (db.DataTime, unique= True, nullable=False , default= DataTime.now)
-    term = db.column(db.Integer,  unique= True, nullable=False)
-    pic =  db.column (db.string(20), nullable=False)
+class Student(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column (db.String(120), unique= True, nullable=False)
+    year = db.Column (db.DataTime, unique= True, nullable=False , default= datetime.now())
+    term = db.Column(db.Integer,  unique= True, nullable=False)
+    pic =  db.Column (db.String(20), nullable=False)
 
-class attendence (db.Model):  
-     id = db.column(db.Integer, primary_key = True)
-     year = db.column (db.DataTime, unique= True, nullable=False , default= DataTime.now)
-     term = db.column(db.Integer,  unique= True, nullable=False)
-     doc_name = db.column (db.string(120), unique= True, nullable=False)
-     data = db.column (db.DataTime, unique= True, nullable=False , default= DataTime.now)
-     student_id = db.column(db.Integer, db.foreignKey('stubent.id'))
-     doc_id = db.column(db.Integer, db.foreignKey('doctor.id'))
+class Attendence (db.Model):  
+    id = db.Column(db.Integer, primary_key = True)
+    year = db.Column (db.DataTime, unique= True, nullable=False , default= datetime.now())
+    term = db.Column(db.Integer,  unique= True, nullable=False)
+    doc_name = db.Column (db.String(120), unique= True, nullable=False)
+    data = db.Column (db.DataTime, unique= True, nullable=False , default= datetime.now())
+    student_id = db.Column(db.Integer, db.ForeignKey('stubent.id'))
+    doc_id = db.Column(db.Integer, db.ForeignKey('doctor.id'))
 class Doctor(db.Model):
-    id = db.column(db.Integer, primary_Key =True)
-    Full_name = db.column(db.String(20), unique=True , nullable=False)
-    Password = db.column(db.String(40), nullable=False)
-   subject_id = db.column(db.Integer,db.Foreignkey('subject_id') ,nullable=False)
+    id = db.Column(db.Integer, primary_Key =True)
+    Full_name = db.Column(db.String(20), unique=True , nullable=False)
+    Password = db.Column(db.String(40), nullable=False)
+    subject_id = db.Column(db.Integer,db.Foreignkey('subject_id') ,nullable=False)
 
-class subject(db.Model):
-    id = db.column(db.Integer,primary_Key=True )
-    name =db.column(db.String(20), unique=True , nullable=False)
-    doctor_id = db.column(db.Integer,db.Foreignkey('doctor_id ') ,nullable=False)
+class Subject(db.Model):
+    id = db.Column(db.Integer,primary_Key=True )
+    name =db.Column(db.String(20), unique=True , nullable=False)
+    doctor_id = db.Column(db.Integer,db.Foreignkey('doctor_id ') ,nullable=False)
 
 class Login (db.Model):
-     id = db.column(db.Integer, primary_Key =True)
-     student_id = db.column(db.Integer,db.Foreignkey('student_id') ,nullable=False)
-     subject_id = db.column(db.Integer,db.Foreignkey('subject_id') ,nullable=False)
-     doctor_id = db.column(db.Integer,db.Foreignkey('doctor_id') ,nullable=False)
-     apply = db.column(db.String(20), unique=True , nullable=False
+    id = db.Column(db.Integer, primary_Key =True)
+    student_id = db.Column(db.Integer,db.Foreignkey('student_id') ,nullable=False)
+    subject_id = db.Column(db.Integer,db.Foreignkey('subject_id') ,nullable=False)
+    doctor_id = db.Column(db.Integer,db.Foreignkey('doctor_id') ,nullable=False)
+    apply = db.Column(db.String(20), unique=True , nullable=False)
 
 
