@@ -1,0 +1,65 @@
+{%extends 'base.html'%}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w680">
+        <div class="card card-4">
+            <div class="card-body">
+                <form method="POST">
+                    <div class="input-group">
+                        <label class="label text-center"><h4>Subject</h4></label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <select name="subject">
+                                <option disabled="disabled" selected="selected">Choose Subject</option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </select>
+                            <div class="select-dropdown"></div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label text-center"><h4>Type</h4></label>
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <select name="subject">
+                                <option disabled="disabled" selected="selected">Choose Type</option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </select>
+                            <div class="select-dropdown"></div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label text-center"><h4>Start Date</h4></label>
+                            <input type="date" id="start" name="trip-start" value="2021-07-22" min="2021-01-01" max="2050-12-31">
+                            <div class="select-dropdown"></div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label text-center"><h4>End Date</h4></label>
+                            <input type="date" id="start" name="trip-start" value="2021-07-22" min="2021-01-01" max="2050-12-31">
+                            <div class="select-dropdown"></div>
+                    </div>
+
+                    
+                    <div class="p-t-15 text-center">
+                        <button class="btn btn--radius-2 btn--blue" type="submit"><center>Submit</center></button>
+                    </div>
+                   <div class="text-center p-t-136" style="border-top: 50px ; margin-top: 25px">
+                    <h3><a class="txt2" href="#" style="text-decoration:none">
+                        Download ME!!
+                        <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                        </a></h3>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

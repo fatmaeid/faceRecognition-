@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="card" style="width: 50rem;">
+          <div class="card-body">
+            <h5 class="card-title">Upload Image</h5>
+            <!-- Upload Image -->
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input inpFile" id="inputGroupFile01">
+                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+              </div>
+            </div>
+
+            <div class="image-preview" id="image-preview">
+              <img class="img-fluid" id="image">
+            </div>
+          </div>
+        </div> 
+    </div> 
+ </div>  
+{% endblock %}
