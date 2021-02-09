@@ -1,27 +1,46 @@
-from flask import render_template
+from flask import render_template , request
 from app import app
 
-@app.route('/')
-def getInformation():
-   return render_template('GetInformation.html')
-
-@app.route('/login')
+@app.route('/' methods=['GET','POST'])
 def login():
+   if request.method == 'POST':
+      pass
+   else:
    return render_template('login.html')
 
-@app.route('/getreport')
+@app.route('/getInformation' methods=['GET','POST'])
+
+def getInformation():
+   if request.method == 'POST':
+      pass
+   else:
+      return render_template('GetInformation.html')   
+
+@app.route('/getreport' methods=['GET','POST'])
 def getreport():
+   if request.method == 'POST':
+      pass
+   else:
    return render_template('getreport.html')
 
 
-@app.route('/UpLoadImage')
+@app.route('/upLoadImage' methods=['GET','POST'])
 def upLoadImage():
-   return render_template('UpLoadImage.html')    
+   if request.method == 'POST':
+      pass
+   else:
+   return render_template('UploadImage.html')    
 
-@app.route('/reg')
+@app.route('/reg' methods=['GET','POST'])
 def reg():
+   if request.method == 'POST':
+      pass
+   else:
    return render_template('reg.html')
 
-@app.route('/take_attendance')
+@app.route('/take_attendance' methods=['GET','POST'])
 def take_attendance():
+   if request.method == 'POST':
+      pass
+   else:
    return render_template('take_attendance.html')
