@@ -31,16 +31,16 @@ def upLoadImage():
    else:
       return render_template('UploadImage.html')    
 
-@app.route('/reg' ,methods=['GET','POST'])
+@app.route('/reg', methods=['GET','POST'])
 def reg():
    if request.method == 'POST':
       pass 
    else:
       return render_template('reg.html')
 
-@app.route('/take_attendance' ,methods=['GET','POST'])
-def take_attendance():
+@app.route('/subjectRegisteration', methods=['GET','POST'])
+def subjectRegisteration():
    if request.method == 'POST':
       pass
    else:
-      return render_template('take_attendance.html')
+      return render_template('subjectRegisteration.html')

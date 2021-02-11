@@ -11,7 +11,7 @@
         <div class="card card-4">
             <div class="card-body">
                 <h2 class="title">Registration Form</h2>
-                <form method="POST" action="/reg">
+                <form method="POST">
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
@@ -40,11 +40,11 @@
                                 <label class="label">Gender</label>
                                 <div class="p-t-10">
                                     <label class="radio-container m-r-45">Male
-                                        <input type="radio" checked="checked" name="gender">
+                                        <input type="radio" checked="checked" name="gender" id="gender">
                                         <span class="checkmark"></span>
                                     </label>
                                     <label class="radio-container">Female
-                                        <input type="radio" name="gender">
+                                        <input type="radio" name="gender" id="gender">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -55,13 +55,13 @@
                         <div class="col-2">
                             <div class="input-group">
                                 <label class="label">Email</label>
-                                <input class="input--style-4" type="email" name="email" id="email">
+                                <input class="input--style-4" type="email" name="email"id="email">
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="input-group">
                                 <label class="label">Phone Number</label>
-                                <input class="input--style-4" type="text" name="phone" id="phone">
+                                <input class="input--style-4" type="text" name="phone"id="phone">
                             </div>
                         </div>
                     </div>
@@ -70,15 +70,15 @@
                         <div class="rs-select2 js-select-simple select--no-search">
                             <select name="subject">
                                 <option disabled="disabled" selected="selected">Choose option</option>
-                                <option>Subject 1</option>
-                                <option>Subject 2</option>
-                                <option>Subject 3</option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
                             </select>
                             <div class="select-dropdown"></div>
                         </div>
                     </div>
                     <div class="p-t-15">
-                        <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        <input class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                     </div>
                 </form>
             </div>

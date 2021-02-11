@@ -3,35 +3,33 @@ from app import db
 
 class Student(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    name = db.Column (db.String(120),  nullable=False)
-    year = db.Column (db.DateTime,  nullable=False , default= datetime.now())
-    term = db.Column(db.Integer,   nullable=False)
-    pic =  db.Column (db.String(20), nullable=False)
+    name = db.Column (db.String(120))
+    year = db.Column (db.Integer)
+    term = db.Column(db.Integer)
+    face_encoding =  db.Column(db.String(2000))
 
-class Attendence (db.Model):  
+class SubjectRegistraton(db.Model):  
     id = db.Column(db.Integer, primary_key = True)
-    year = db.Column (db.DateTime, nullable=False , default= datetime.now())
-    term = db.Column(db.Integer,   nullable=False)
-    doc_name = db.Column (db.String(120),  nullable=False)
-    data = db.Column (db.DateTime,  nullable=False , default= datetime.now())
+    year = db.Column (db.Integer)
+    term = db.Column(db.Integer)
     student_id = db.Column(db.Integer, db.ForeignKey('student.id'))
-    doc_id = db.Column(db.Integer, db.ForeignKey('doctor.id'))
+    subject_id = db.Column(db.Integer, db.ForeignKey('subject.id'))
 class Doctor(db.Model):
     id = db.Column(db.Integer, primary_key =True)
-    Full_name = db.Column(db.String(20), nullable=False)
-    Password = db.Column(db.String(40), nullable=False)
-    subject_id = db.Column(db.Integer,db.ForeignKey('subject.id') ,nullable=False)
+    full_name = db.Column(db.String(200))
+    password = db.Column(db.String(40))
 
 class Subject(db.Model):
     id = db.Column(db.Integer,primary_key=True )
-    name =db.Column(db.String(20), nullable=False)
-    doctor_id = db.Column(db.Integer,db.ForeignKey('doctor.id') ,nullable=False)
+    name =db.Column(db.String(200))
+    doctor_id = db.Column(db.Integer,db.ForeignKey('doctor.id'))
 
-class Login (db.Model):
+class Attend (db.Model):
     id = db.Column(db.Integer, primary_key =True)
-    student_id = db.Column(db.Integer,db.ForeignKey('student.id') ,nullable=False)
-    subject_id = db.Column(db.Integer,db.ForeignKey('subject.id') ,nullable=False)
-    doctor_id = db.Column(db.Integer,db.ForeignKey('doctor.id') ,nullable=False)
-    apply = db.Column(db.String(20),  nullable=False)
+    lecture_number = db.Column(db.Integer)
+    student_id = db.Column(db.Integer,db.ForeignKey('student.id'))
+    subject_id = db.Column(db.Integer,db.ForeignKey('subject.id'))
+    date = db.Column (db.DateTime,default= datetime.now()) 
+   
 
 
