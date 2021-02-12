@@ -14,6 +14,7 @@ class SubjectRegistraton(db.Model):
     term = db.Column(db.Integer)
     student_id = db.Column(db.Integer, db.ForeignKey('student.id'))
     subject_id = db.Column(db.Integer, db.ForeignKey('subject.id'))
+    
 class Doctor(db.Model):
     id = db.Column(db.Integer, primary_key =True)
     full_name = db.Column(db.String(200))
@@ -24,12 +25,9 @@ class Subject(db.Model):
     name =db.Column(db.String(200))
     doctor_id = db.Column(db.Integer,db.ForeignKey('doctor.id'))
 
-class Attend (db.Model):
+class Attend(db.Model):
     id = db.Column(db.Integer, primary_key =True)
     lecture_number = db.Column(db.Integer)
     student_id = db.Column(db.Integer,db.ForeignKey('student.id'))
     subject_id = db.Column(db.Integer,db.ForeignKey('subject.id'))
-    date = db.Column (db.DateTime,default= datetime.now()) 
-   
-
-
+    date = db.Column (db.DateTime, default= datetime.now()) 

@@ -9,42 +9,39 @@
 <div class="container">
     <div class="row">
         <div class="card" style="width: 50rem;">
-          <div class="card-body">
+          <form class="card-body" method="post" action="/upLoadImage" enctype='multipart/form-data'>
             <h5 class="card-title">Upload Image</h5>
             <!-- Upload Image -->
             <div class="input-group mb-3">
               <div class="custom-file">
-                <input type="file" class="custom-file-input inpFile" id="inputGroupFile01">
                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                <input type="file" class="custom-file-input inpFile" name="file" id="file">
+              </div>
               </div>
               <div class="input-group">
                 <label class="label text-center"><h4>subject</h4></label>
                 <div class="rs-select2 js-select-simple select--no-search">
                     <select name="subject" id="subject">
                         <option disabled="disabled" selected="selected">Choose subject</option>
-                        <option></option>
-                        <option></option>
-                        <option></option>
+                        
+                        {% for subject in subjects %}
+                            <option value="{{ subject.id }}">{{ subject.name }}</option>
+                        {% endfor %}
                     </select>
-                    <div class="select-dropdown"></div>
                 </div>
               
-            </div>
+              </div>
              <div class="input-group">
                   <label class="label text-center"><h4>Lecture Number</h4></label>
-                          <input type="number" name="lecNum" id="lecNum" >
-                  </div>
+                  <input type="number" name="lecNum" id="lecNum" >
+             </div>
 
             
             <div class="form-action-button">
               <input type="submit" value="Submit" name="u" class="btn btn-primary mt-2">
-          </div>
-
-            <div class="image-preview" id="image-preview">
-              <img class="img-fluid" id="image">
             </div>
-          </div>
-        </div> 
+        </form> 
     </div> 
- </div>  
+ </div> 
+</div>
 {% endblock %}

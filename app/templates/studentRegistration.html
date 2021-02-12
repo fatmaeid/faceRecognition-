@@ -10,31 +10,23 @@
     <div class="wrapper wrapper--w680">
         <div class="card card-4">
             <div class="card-body">
-                <h2 class="title">Registration Form</h2>
-                <form method="POST" action="/reg">
+                <h2 class="title">Student Registration</h2>
+                <form method="POST" action="/studentRegisteration" enctype='multipart/form-data'>
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">first name</label>
-                                <input class="input--style-4" type="text" name="first_name" id="first_name">
+                                <label class="label">Name</label>
+                                <input class="input--style-4" type="text" name="name" id="name">
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">last name</label>
-                                <input class="input--style-4" type="text" name="last_name" id="last_name">
+                                <label class="label">Year</label>
+                                <input class="input--style-4" type="number" name="year" id="year">
                             </div>
                         </div>
                     </div>
                     <div class="row row-space">
-                        <div class="col-2">
-                            <div class="input-group">
-                                <label class="label">Password</label>
-                                <div class="input-group-icon">
-                                    <input class="input--style-4 " type="password" name="password" id="password">
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-2">
                             <div class="input-group">
                                 <label class="label">Gender</label>
@@ -50,20 +42,19 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Term</label>
+                                <input class="input--style-4" type="number" name="term" id="term">
+                            </div>
+                        </div>
                     </div>
-                    <div class="row row-space">
-                        <div class="col-2">
-                            <div class="input-group">
-                                <label class="label">Email</label>
-                                <input class="input--style-4" type="email" name="email"id="email">
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="input-group">
-                                <label class="label">Phone Number</label>
-                                <input class="input--style-4" type="text" name="phone"id="phone">
-                            </div>
-                        </div>
+                    <div class="input-group mb-3">
+                          <div class="custom-file">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                <input type="file" class="custom-file-input inpFile" name="file" id="file">
+                          </div>
                     </div>
                     <div class="p-t-15">
                         <input class="btn btn--radius-2 btn--blue" type="submit">

@@ -10,15 +10,21 @@
     <div class="row">
         <table class="table" class="list" id="table">
             <thead>
-            <tr>
-                <th scope="col">Roll Number</th>
-                <th scope="col">Name</th>
-                <th scope="col"></th>
-            </tr>
+                <tr>
+                    <th scope="col">Student</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Term</th>
+                </tr>
           </thead>
           <tbody>
-              
-        </tbody>  
+              {% for student in students %}
+                <tr>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.year }}</td>
+                    <td>{{ student.term }}</td>
+                </tr>
+              {% endfor %}
+          </tbody>  
     </table>
 
     <button type="button" class="btn btn-primary m-auto" data-toggle="modal" data-target="#exampleModal">Add Student</button>
