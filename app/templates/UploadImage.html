@@ -1,7 +1,21 @@
 {%extends 'base.html'%}
 
 {% block head %}
-
+ <head>
+   <style>
+    .container {
+    width: 100%;
+    margin: 15% 23%;
+       }
+      body{
+        
+          background: #9053c7;
+          background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+          background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+          background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+          background: linear-gradient(to top right, #fc2c77 0%, #6c4079 100%);}
+   </style>
+ </head>
 {% endblock %}
 
 
@@ -18,17 +32,18 @@
                 <input type="file" class="custom-file-input inpFile" name="file" id="file">
               </div>
               </div>
-              <div class="input-group">
-                <label class="label text-center"><h4>subject</h4></label>
-                <div class="rs-select2 js-select-simple select--no-search">
-                    <select name="subject" id="subject">
+              <div class="from-group">
+                <label for="inputState"><h4>subject</h4></label>
+               
+                    <select  name="subject" id="subject" class="form-control">
                         <option disabled="disabled" selected="selected">Choose subject</option>
                         
                         {% for subject in subjects %}
+                        
                             <option value="{{ subject.id }}">{{ subject.name }}</option>
                         {% endfor %}
                     </select>
-                </div>
+              
               
               </div>
              <div class="input-group">

@@ -27,7 +27,9 @@ def getInformation():
         return redirect("/")
         
     students = models.Student.query.all()
-    return render_template('GetInformation.html', students=students)   
+    return render_template('GetInformation.html', students=students) 
+    
+      
 
 @app.route('/getreport' ,methods=['GET','POST'])
 def getreport():
