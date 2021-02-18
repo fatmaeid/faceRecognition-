@@ -28,6 +28,15 @@ def getInformation():
         
     students = models.Student.query.all()
     return render_template('GetInformation.html', students=students) 
+
+@app.route('/getAttandance', methods=['GET','POST'])
+def getAttandance():
+    if "user" not in session:
+        return redirect("/")
+        
+    students = models.Student.query.all()
+    return render_template('getAttandance.html', students=students) 
+
     
       
 
