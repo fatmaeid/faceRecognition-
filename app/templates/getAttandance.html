@@ -13,57 +13,27 @@
             <thead>
                 <tr>
                     <th scope="col">Student</th>
-                    <th scope="col">subject</th>
-                    <th scope="col">lecture number</th>
-                    
+                    <th scope="col">Subject</th>
+                    <th scope="col">Lecture number</th>
+                    <th scope="col">Date</th>
                 </tr>
           </thead>
           <tbody>
             <tr>
-              {% for Attend in Attends %}
+              {% for attend in attendances %}
               
                 <tr>
-                    <td>{{ Attend.student_id }}</td>
-                    <td>{{ Attend.subject_id }}</td>
-                    <td>{{Attend.lecture_number}}</td>
+                    <td>{{ attend.student_name }}</td>
+                    <td>{{ attend.subject_name }}</td>
+                    <td>{{ attend.lecture_number }}</td>
+                    <td>{{ attend.date }}</td>
                 </tr>
               {% endfor %}
              
-
           </tbody>  
     </table>
 
     <button type="button" class="btn btn-primary m-auto" data-toggle="modal" data-target="#exampleModal">Add Student</button>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel" >Add a student</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" name="addStdentS">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-              <div class="modal-body">
-                  
-                  <form class="form-group" autocomplete="off" onsubmit=" event.preventDefault(); onFormSubmit();" >
-                    <div>
-                        <label>Name</label>
-                        <input type="text" name="name" id="name" class="form-control" required="">
-                    </div>
-                    <div>
-                        <label>Roll Number</label>
-                        <input type="text" name="rollNum" id="rollNum" class="form-control" required="">
-                    </div>
-                    <div class="form-action-button">
-                        <input type="submit" value="Submit" class="btn btn-primary mt-2">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-        </div>  
         
     </div>
 </div> 

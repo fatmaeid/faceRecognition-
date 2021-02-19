@@ -29,13 +29,21 @@ def getInformation():
     students = models.Student.query.all()
     return render_template('GetInformation.html', students=students) 
 
-@app.route('/getAttandance', methods=['GET','POST'])
+@app.route('/getAttandance')
 def getAttandance():
     if "user" not in session:
         return redirect("/")
         
-    students = models.Student.query.all()
-    return render_template('getAttandance.html', students=students) 
+    attendances = models.Attend.query.all()
+    attendance_dict = []
+    for attendance in attendances:
+        student = models.Student.query.filter(models.Student.id == attendance.student_id).first()
+        subject = models.Subject.query.filter(models.Subject.id == attendance.subject_id).first()
+        
+        attendance.student_name = student.name
+        attendance.subject_name = subject.name
+    
+    return render_template('getAttandance.html', attendances=attendances) 
 
     
       
